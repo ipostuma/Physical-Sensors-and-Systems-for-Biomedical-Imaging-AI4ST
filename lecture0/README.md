@@ -21,6 +21,7 @@ Objective: Use grep to find employees with salaries greater than $55,000.
 
 <details>
   <summary>Answer</summary>
+
 ```
 grep '\$[5-9][0-9]\{4\}' employees.txt
 ```
@@ -30,6 +31,7 @@ Explanation:
 * \ is used to escape the $ symbol because it has a special meaning in regular expressions.
 * [5-9] matches any digit from 5 to 9.
 * [0-9]\{4\} matches exactly four digits (the salary part).
+  
 </details>
 
 Correct result:
@@ -39,6 +41,6 @@ Jane Smith, $60000
 Alice Brown, $58000
 ```
 
-###Task 2: Using awk to Extract and Manipulate Data
+### Task 2: Using awk to Extract and Manipulate Data
 
 Objective: Use awk to extract the employee names and salaries and calculate their bonuses (10% of the salary).
