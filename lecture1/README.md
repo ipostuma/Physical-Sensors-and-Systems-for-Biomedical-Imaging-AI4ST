@@ -302,7 +302,10 @@ cat iris.csv| grep "Iris-versicolor" > versicolor.csv
 cat iris.csv| grep "Iris-virginica" > virginica.csv
 
 # Plot the sepal length and width of each iris type
-gnuplot -p -e "setosa='setosa.csv'" -e "versicolor='versicolor.csv'" -e "virginica='virginica.csv'" iris.gpl 
+gnuplot -p -e "setosa='setosa.csv'" -e "versicolor='versicolor.csv'" -e "virginica='virginica.csv'" iris.gpl
+
+# to ensure that awk reads decimals correctly
+LC_NUMERIC=en_US.UTF-8
 
 # Compute the mean and standard deviation for all available columns for each iris type
 for iris_type in setosa versicolor virginica; do
