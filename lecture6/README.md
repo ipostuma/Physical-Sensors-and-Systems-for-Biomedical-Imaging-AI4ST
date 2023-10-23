@@ -25,7 +25,7 @@ The Radon transform is a mathematical operation that takes an image and produces
 FBP starts with these Radon projections and uses the filtered back projection formula to reconstruct the image. The formula can be expressed as follows:
 
 $$
-g(x,y) = \frac{1}{2\pi}\int_{0}ˆ{\pi}\int_{-\inf}ˆ{+\inf}Rf(\theta,s)w(\theta,s,x,y)dsd\theta
+g(x,y) = \frac{1}{2\pi}\int_{0}^{\pi}\int_{-\infty}^{+\infty}Rf(\theta,s)w(\theta,s,x,y)dsd\theta
 $$
 
 where:
