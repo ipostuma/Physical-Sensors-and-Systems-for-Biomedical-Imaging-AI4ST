@@ -75,3 +75,35 @@ Now generate the projections of your image (or you may use [this data](data/phan
 Write the fuction which transforms your image from the sinogram space to the original $(x,y)$ coordinate system. Follow the initial paragraphs of this class to better understand how to implement this algorithm. The result without filtering should look like this:
 
 ![Back Proejection](BP.png)
+
+### Filter the sinogram
+
+Take the projection image and filter it with a ramp filter through a fourier transform of the image. A ramp filter is a type of filter used in the context of computed tomography (CT) image reconstruction, particularly in the Filtered Back Projection (FBP) algorithm. Its primary purpose is to emphasize spatial frequencies in the projection data while reducing the impact of high-frequency noise. Mathematically, the ramp filter is represented as follows:
+
+$$
+R(f)=∣f∣
+$$
+
+Where:
+
+* $R(f)$ is the frequency response of the ramp filter.
+* f is the frequency variable.
+
+Tip:
+
+* use `from scipy.fftpack import fft, fftshift, ifft`
+* try to implement a ramp filter coupled to window function
+* try to create the Back Projection of the filtered sinogram (FBP)
+
+### Randomly generate phantom data
+
+Take the first exercise and generate random phantom images. Compute the radon transformation for each generated phantom image, to obtain it's sinogram. 
+
+tip:
+
+* Generate at least 100 phantom images and sinograms
+* Use Python's random number generator.
+
+### Train a CNN 
+
+Now write your own network (UNET should do) and train the network to reconstruct the image starting from it's sinogram. Once trained test your NN with a sinogram image it has never seen.
