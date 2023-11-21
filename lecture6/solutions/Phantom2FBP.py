@@ -11,8 +11,9 @@ phantom = Phantom.Create()
 sinogram = Radon.Transform(phantom,num_detector_pixels,num_projections)
 
 sinogramf = Radon.projFilter(sinogram)
+#sinogramf = Radon.rampFilter(sinogram)
 
-reconstructed_image = Radon.filtered_back_projection(sinogram)
+reconstructed_image = Radon.filtered_back_projection(sinogramf)
 
 # Display the results
 plt.figure(figsize=(8, 8), tight_layout=True)

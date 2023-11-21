@@ -20,6 +20,26 @@ def Transform(phantom,num_detector_pixels,num_projections,min_a=0, max_a=180):
         sinogram[:,i]=detector
     return sinogram
 
+def rampFilter(sino):
+    """Ramp filter  
+    """
+    
+    projLen, numAngles = sino.shape
+    step = 2*np.pi/projLen
+    #w = np.arange(-np.pi, np.pi, step)
+    w = np.linspace(-np.pi, np.pi,projLen)
+    filt = fftshift(np.absolute(w)) 
+    
+    # Apply the filter
+    # filt = fftshift(r)   
+    filtSino = np.zeros((projLen, numAngles))
+    for i in range(numAngles):
+        projfft = fft(sino[:,i])
+        filtProj = projfft*filt
+        filtSino[:,i] = np.real(ifft(filtProj))
+
+    return filtSino
+
 def projFilter(sino, a=0.1):
     """filter projections. Normally a ramp filter multiplied by a window function is used in filtered backprojection. The filter function here can be adjusted by a single parameter 'a' to either approximate a pure ramp filter (a ~ 0)  or one that is multiplied by a sinc window with increasing cutoff frequency (a ~ 1).
     
