@@ -95,8 +95,3 @@ Alice Brown, USD58000
 ```
 
 In this hands-on example, we've demonstrated how to use grep to search for patterns, awk to extract and manipulate data, and sed to replace text within a sample text file. These tools are incredibly versatile and can be applied to various text processing tasks in a Linux environment.
-
-## Final exercise
-
-Use `links2` command to retrieve data from **https://auroraforecast.is/solar-wind/** website. Then search for the line containing the information about solar wind speed and print the data in m/h format.
-
