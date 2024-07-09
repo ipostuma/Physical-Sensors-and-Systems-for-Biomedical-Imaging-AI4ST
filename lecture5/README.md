@@ -19,3 +19,7 @@ conda activate keras
 conda install tensorflow-gpu=2.4.1 cudatoolkit jupyter matplotlib scikit-image numpy
 conda install -c conda-forge nibabel
 ```
+
+## References
+
+These examples were inspired by Franchois Chollet "Deep Learning with Python" book and tutorials. [Here](https://github.com/fchollet/deep-learning-with-python-notebooks) you may find the entire tutorial of his book and course. 
